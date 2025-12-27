@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(180deg, #ffd4e9, #ffeaf5, #eef5ff);
+    background-attachment: fixed;
+}
+
+/* ================= NAVBAR ================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(10px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: #ff7ec0;
+}
+
+.logo span {
+    color: #7cb8ff;
+}
+
+/* ================= HERO ================= */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 110px 8%;
+    gap: 50px;
+}
+
+.hero-text {
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+}
+
+.highlight {
+    color: #ff7ec0;
+}
+
+.typing {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+
+.hero-text p {
+    max-width: 420px;
+    margin-top: 10px;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 26px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #ffa7d2, #7cb8ff);
+    transition: .25s;
+}
+
+.hero-btn:hover {
+    transform: scale(1.06);
+}
+
+/* ===== HERO IMAGE + CIRCLE BACKGROUND ===== */
+.hero-img {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img img {
+    width: 260px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 6px 30px rgba(255,150,200,0.45);
+}
+
+.circle-bg {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(135deg, #ffa7d2, #7cb8ff);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    padding: 80px 8%;
+    text-align: left;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #7cb8ff;
+}
+
+.about-text {
+    max-width: 700px;
+    line-height: 1.7;
+}
+
+/* ================= CARD ================= */
+.card-container {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
+.card {
+    background: white;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(255,150,200,0.25);
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.date {
+    font-size: 13px;
+    color: #777;
+}
+
+/* ================= CONTACT ================= */
+.contact-list {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-list a {
+    padding: 10px 22px;
+    background: #7cb8ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: .25s;
+}
+
+.contact-list a:hover {
+    background: #ff7ec0;
+    transform: scale(1.07);
+}
+
+/* ================= ANIMATIONS ================= */
+.fade {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.fade-up {
+    opacity: 0;
+    animation: fadeUp 1.4s ease forwards;
+}
+
+.slide {
+    opacity: 0;
+    animation: slideIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin: 0 auto;
+    }
+
+    .hero-img {
+        width: 260px;
+        height: 260px;
+    }
+
+    .circle-bg {
+        width: 230px;
+        height: 230px;
+    }
+}
